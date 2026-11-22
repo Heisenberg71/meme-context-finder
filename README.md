@@ -21,6 +21,8 @@ The top-left corner shows how many memes have been explained and how many unique
 
 ## How it works
 
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the system design diagram and a step-by-step walkthrough.
+
 1. **Browser** (`src/lib/client/prepareImage.ts`): accepts one raster image (no SVG) and shrinks it to at most 1024px as a JPEG. Browsers that can't decode HEIC send the original file.
 2. **`POST /api/explain`** (`src/app/api/explain/route.ts`):
    - checks the upload by its real bytes, not its name (`src/lib/validate.ts`): exactly one file, no other fields, PNG/JPEG/WEBP/HEIC/HEIF, up to 4 MB
